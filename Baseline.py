@@ -8,8 +8,8 @@ from copy import copy
 
 #%% Data
 path_ = r'C:\Users\MI\Desktop\HedgeProject\Framework\database_1h\Raw_data'
-vDates = np.load(path_+rf'/vDates.npy', allow_pickle=True)
-btc_price = zarr.open_array(path_+rf'\crypto_db.zarr', mode = 'r')[78,0,:,:6]
+# vDates = np.load(path_+rf'/vDates.npy', allow_pickle=True)
+# btc_price = zarr.open_array(path_+rf'\crypto_db.zarr', mode = 'r')[78,0,:,:6]
 
 #%% Support Functions
 def SimpleBacktest(investment, btc_price):
