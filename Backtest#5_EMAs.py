@@ -23,11 +23,15 @@ ema_55 = B.EMA(btc_price_weekly, N = 55).copy()
 ema_55 = ema_55[start:end+1].copy()
 plt.plot(vDates_weekly[start:end+1],ema_55); plt.show()
 
+#%% RSI
+rsi = B.RSI(btc_price_weekly).copy()
+rsi = rsi[start:end+1].copy()
+
 
 #%% Define indicators
 ema_200_indicator = (btc_price_weekly[start:end+1,3] < ema_200).copy()
 ema_55_indicator = (btc_price_weekly[start:end+1,3] < ema_55).copy()
-ema_55_exit_indicator = (btc_price_weekly[start:end+1,3] >= 2*ema_55).copy()
+ema_55_exit_indicator = (rsi >= 80).copy()
 
 #%% Priority 1. RSI, 2. EMA, 3. ATH
 investment = np.repeat(250, btc_price_weekly[start:end+1].shape[0])
